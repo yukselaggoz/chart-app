@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=button] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+            input[type=button]:hover {
+                background-color: #45a049;
+            }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ASP.NET Uygulamam</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/Chart.js"></script>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">Dynamic Chart App</a>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">Server Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="server" placeholder="localhost">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">User Id</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="userid" placeholder="root">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">User Password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="lname" name="userid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Data Set</label>
+                </div>
+                <div class="col-75">
+                    <select id="dataset" name="Dataset"></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="country">Chart Type</label>
+                </div>
+                <div class="col-75">
+                    <select id="chartType" name="ChartType">
+                        <option value="lineChart">Line Chart</option>
+                        <option value="barChart">Bar Chart</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <input type="button" id="Getir" value="Verileri Getir" />
+            </div>
+
+
+            <hr />
+            <canvas id="lineChart" style="width:auto;height:auto;visibility:hidden"></canvas>
+            <canvas id="barChart" style="width:auto;height:auto;visibility:hidden"></canvas>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/Index.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

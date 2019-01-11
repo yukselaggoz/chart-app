@@ -1,0 +1,105 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/Chart.js"></script>
+    <script src="~/Scripts/Chart.min.js"></script>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Index.css" rel="stylesheet" />
+
+    <title>Index</title>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container" style="background-color:#b3b3b3">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">DYNAMIC CHART APP</a>
+            </div>
+        </div>
+    </div>
+    <div class="container jumbotron">
+
+        <div class="row">
+            <div class="col-25">
+                <label for="servername">Server Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="severname" name="server" placeholder="localhost">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="userid">User Id</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="userid" name="userid" placeholder="root">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="userpwd">User Password</label>
+            </div>
+            <div class="col-75">
+                <input type="password" id="userpwd" name="userid">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="database">Database</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="database" name="Database" placeholder="chart_db"></input>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="button" id="vtConn" value="Veritabanına Bağlan" />
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="dataset">Data Set</label>
+            </div>
+            <div class="col-75">
+                <select id="dataset" name="Dataset"></select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="charttype">Chart Type</label>
+            </div>
+            <div class="col-75">
+                <select id="chartType" name="ChartType">
+                    <option value="lineChart">Line Chart</option>
+                    <option value="barChart">Bar Chart</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="button" id="Getir" value="Verileri Getir" />
+        </div>
+    </div>
+    <div class="container body-content">
+        <canvas id="lineChart" style="width:auto;height:auto;display:none"></canvas>
+        <canvas id="barChart" style="width:auto;height:auto;display:none"></canvas>
+    </div>
+
+    <script src="~/Scripts/Index.js"></script>
+</body>
+</html>
